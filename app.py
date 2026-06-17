@@ -6,8 +6,9 @@ app = Flask(__name__)
 def index():
     setores = [
         "Meio Ambiente",
-        "Saúde",
-        "Educação"
+        "Segurança do Trabalho",
+        "Gestão Integrada",
+        "Saúde Ocupacional",
     ]
 
     return render_template(
