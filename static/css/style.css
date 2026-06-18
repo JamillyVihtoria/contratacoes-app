@@ -1,12 +1,15 @@
-body{
-    font-family: Arial, sans-serif;
-    background:#f4f6f8;
+.card{
+    border:1px solid #ddd;
+    padding:20px;
+    margin-bottom:15px;
+    border-radius:10px;
 }
 
-.container{
-    width:800px;
-    margin:50px auto;
-    background:white;
-    padding:30px;
-    border-radius:12px;
+button{
+    background:#0082be;
+    color:white;
+    border:none;
+    padding:10px 20px;
+    border-radius:8px;
+    cursor:pointer;
 }

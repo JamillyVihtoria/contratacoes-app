@@ -4,15 +4,23 @@
 
 <h1>Portal de Contratações</h1>
 
-<form>
+<form action="/contratos" method="GET">
 
     <label>Selecione o setor</label>
 
-    <select>
+    <br><br>
+
+    <select name="setor">
+
         {% for setor in setores %}
-        <option>{{ setor }}</option>
+            <option value="{{ setor }}">
+                {{ setor }}
+            </option>
         {% endfor %}
+
     </select>
+
+    <br><br>
 
     <button type="submit">
         Entrar

@@ -1,0 +1,34 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>{{ setor }}</h1>
+
+<h3>Contratos encontrados</h3>
+
+{% for contrato in contratos %}
+
+<div class="card">
+
+    <h3>{{ contrato.nome }}</h3>
+
+    <p>
+        Processo:
+        {{ contrato.processo }}
+    </p>
+
+    <p>
+        Fluxo:
+        {{ contrato.fluxo }}
+    </p>
+
+    <a href="/contrato/{{ contrato.processo }}">
+        <button>
+            Abrir
+        </button>
+    </a>
+</div>
+
+{% endfor %}
+
+{% endblock %}
