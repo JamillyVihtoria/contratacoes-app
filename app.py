@@ -53,11 +53,11 @@ def contrato(processo):
     }
 
     fases = [
-        {"nome": "GGSSMA", "status": "concluida"},
-        {"nome": "Compras", "status": "concluida"},
-        {"nome": "GGCONT", "status": "atual"},
-        {"nome": "Contabilidade", "status": "futura"},
-        {"nome": "Jurídico", "status": "futura"}
+    {"id":1, "nome":"GGSSMA", "status":"concluida"},
+    {"id":2, "nome":"Compras", "status":"concluida"},
+    {"id":3, "nome":"GGCONT", "status":"atual"},
+    {"id":4, "nome":"Contabilidade", "status":"futura"},
+    {"id":5, "nome":"Jurídico", "status":"futura"}
     ]
     return render_template(
         "contrato.html",

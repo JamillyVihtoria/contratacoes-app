@@ -15,6 +15,7 @@
         <div class="fase-container">
 
             <div
+                id="fase-{{ loop.index0 }}"
                 class="bolinha {{ fase.status }}"
                 {% if fase.status == 'atual' %}
                     onclick="abrirModal()"
@@ -36,6 +37,13 @@
     {% endfor %}
 
 </div>
+
+<script>
+
+const fases = {{ fases|tojson }};
+
+</script>
+
 <div id="modalFluxo" class="modal">
 
     <div class="modal-content">
