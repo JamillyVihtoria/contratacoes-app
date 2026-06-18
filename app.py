@@ -45,3 +45,27 @@ def contratos():
 
 if __name__ == "__main__":
     app.run(debug=True)
+
+@app.route("/contrato/<processo>")
+def contrato(processo):
+
+    contrato = {
+        "processo": processo,
+        "nome": "Coleta de Resíduos",
+        "fluxo": "licitatorio",
+        "fase_atual": "GGCONT"
+    }
+
+    fases = [
+        "GGSSMA",
+        "Compras",
+        "GGCONT",
+        "Contabilidade",
+        "Jurídico"
+    ]
+
+    return render_template(
+        "contrato.html",
+        contrato=contrato,
+        fases=fases
+    )

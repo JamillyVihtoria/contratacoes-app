@@ -1,0 +1,40 @@
+{% extends "base.html" %}
+
+{% block content %}
+
+<h1>{{ contrato.nome }}</h1>
+
+<p>
+    Processo:
+    {{ contrato.processo }}
+</p>
+
+<div class="pipeline">
+
+    {% for fase in fases %}
+
+        {% if fase == contrato.fase_atual %}
+
+            <div class="fase atual">
+                {{ fase }}
+            </div>
+
+        {% elif loop.index0 < fases.index(contrato.fase_atual) %}
+
+            <div class="fase concluida">
+                {{ fase }}
+            </div>
+
+        {% else %}
+
+            <div class="fase futura">
+                {{ fase }}
+            </div>
+
+        {% endif %}
+
+    {% endfor %}
+
+</div>
+
+{% endblock %}
