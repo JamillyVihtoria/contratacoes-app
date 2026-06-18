@@ -43,9 +43,6 @@ def contratos():
     )
 
 
-if __name__ == "__main__":
-    app.run(debug=True)
-
 @app.route("/contrato/<processo>")
 def contrato(processo):
 
@@ -69,3 +66,7 @@ def contrato(processo):
         contrato=contrato,
         fases=fases
     )
+
+
+if __name__ == "__main__":
+    app.run(debug=True)
