@@ -5,36 +5,61 @@
 <h1>{{ contrato.nome }}</h1>
 
 <p>
-    Processo:
-    {{ contrato.processo }}
+    Processo: {{ contrato.processo }}
 </p>
 
 <div class="pipeline">
 
     {% for fase in fases %}
 
-        {% if fase == contrato.fase_atual %}
+        <div class="fase-container">
 
-            <div class="fase atual">
-                {{ fase }}
+            <div
+                class="bolinha {{ fase.status }}"
+                {% if fase.status == 'atual' %}
+                    onclick="abrirModal()"
+                {% endif %}
+            >
+                {{ loop.index }}
             </div>
 
-        {% elif loop.index0 < fases.index(contrato.fase_atual) %}
-
-            <div class="fase concluida">
-                {{ fase }}
+            <div class="fase-label">
+                {{ fase.nome }}
             </div>
 
-        {% else %}
+        </div>
 
-            <div class="fase futura">
-                {{ fase }}
-            </div>
-
+        {% if not loop.last %}
+            <div class="linha"></div>
         {% endif %}
 
     {% endfor %}
 
 </div>
+<div id="modalFluxo" class="modal">
+
+    <div class="modal-content">
+
+        <h3>
+            A contratação avançou ou retornou?
+        </h3>
+
+        <button onclick="mostrarAvanco()">
+            Avançou
+        </button>
+
+        <button onclick="mostrarRetorno()">
+            Retornou
+        </button>
+
+        <button onclick="fecharModal()">
+            Cancelar
+        </button>
+
+    </div>
+
+</div>
+
+<div id="opcoesFase"></div>
 
 {% endblock %}

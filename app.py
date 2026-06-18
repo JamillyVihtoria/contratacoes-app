@@ -47,20 +47,18 @@ def contratos():
 def contrato(processo):
 
     contrato = {
-        "processo": processo,
-        "nome": "Coleta de Resíduos",
-        "fluxo": "licitatorio",
-        "fase_atual": "GGCONT"
+    "processo": processo,
+    "nome": "Coleta de Resíduos",
+    "fase_atual": "GGCONT"
     }
 
     fases = [
-        "GGSSMA",
-        "Compras",
-        "GGCONT",
-        "Contabilidade",
-        "Jurídico"
+        {"nome": "GGSSMA", "status": "concluida"},
+        {"nome": "Compras", "status": "concluida"},
+        {"nome": "GGCONT", "status": "atual"},
+        {"nome": "Contabilidade", "status": "futura"},
+        {"nome": "Jurídico", "status": "futura"}
     ]
-
     return render_template(
         "contrato.html",
         contrato=contrato,
