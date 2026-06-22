@@ -65,6 +65,12 @@ def contrato(processo):
         fases=fases
     )
 
+fases_percorridas = [
+    "GGSSMA",
+    "Compras",
+    "GGCONT"
+]
+
 
 if __name__ == "__main__":
     app.run(debug=True)
